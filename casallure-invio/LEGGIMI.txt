@@ -1,0 +1,67 @@
+CASALLURE – IMMAGINI PER IL SITO
+================================
+
+CARTELLA 01-sciacca  (pronte all'uso, 2160 px di larghezza, senza logo né scritte)
+-----------------------------------------------------------------------------------
+sciacca-soggiorno-prima.jpg            2160 x 1215   Il soggiorno com'era (foto reale).
+sciacca-soggiorno-render-A-legno.jpg   2160 x 1300   Simulazione A: caldo, con il legno.
+sciacca-soggiorno-render-B-chiaro.jpg  2160 x 1300   Simulazione B: chiaro e luminoso.
+
+Le tre immagini sono state ritagliate dalle slide del post «Prima e dopo il soggiorno»
+del 30/10: è stata tolta solo la grafica (logo, etichette, testi). Sulla foto «prima»
+è stata cancellata l'etichetta «ESEMPIO»; nient'altro è stato ritoccato.
+
+IMPORTANTE – i due render sono simulazioni, non foto della casa finita.
+Sul sito vanno sempre accompagnati da una didascalia del tipo
+«Simulazione: un'idea di come potrebbe diventare».
+È anche coerente con il tono del sito: precisione e correttezza, nessuna promessa
+che le foto non possano mantenere.
+
+Per le pagine larghe a tutto schermo (oltre 2000 px) le immagini restano nitide fino a
+circa 2160 px; oltre, conviene usarle in un riquadro e non a piena pagina.
+
+
+ALTRE IMMAGINI CONSIGLIATE (da scaricare da Unsplash)
+-----------------------------------------------------
+Licenza Unsplash: gratuite anche per uso commerciale, il credito al fotografo non è
+obbligatorio ma è gradito. Non si possono rivendere così come sono.
+Per scaricarle in alta definizione: aprire il link e premere «Download».
+Sono state scelte in base alla descrizione: guardatele prima di usarle.
+Sono escluse di proposito le foto con persone riconoscibili.
+
+Sciacca e il Mediterraneo
+  - Ceramiche sul mare, Sciacca – Renzo Vanden Bussche
+    https://unsplash.com/photos/6uaposAUdU0
+  - Tramonto, Sciacca – Stefano Campisi
+    https://unsplash.com/photos/m-0F41D4PyM
+  - Finestra di legno aperta su un centro storico – Jens Peter Olesen
+    https://unsplash.com/photos/o_PLt17tLII
+  - Persiane su una facciata consumata – Giovanni L.
+    https://unsplash.com/photos/XZxQYKU2Qc0
+
+La parola data: precisione, documenti, firma
+  - Stilografica che scrive – Aaron Burden
+    https://unsplash.com/photos/y02jEX_B0O0
+  - Stilografica su carta da lettere – Álvaro Serrano
+    https://unsplash.com/photos/hjwKMkehBco
+  - «Sign here», una firma su un documento – Scott Graham
+    https://unsplash.com/photos/OQMZwNd3ThU
+  - Planimetrie con righello metallico e matite – Lucas Kepner
+    https://unsplash.com/photos/Yn8D5B8C-eY
+  - Matita su un disegno tecnico – Sven Mieke
+    https://unsplash.com/photos/fteR0e2BzKo
+
+La casa che passa di mano
+  - Chiave antica e la sua sagoma nella polvere – Nick Russill
+    (bella per le pagine sulle eredità: ciò che resta, ciò che va sistemato)
+    https://unsplash.com/photos/tXzfkxQwqpg
+  - Chiavi su un tavolo di legno – Filip Szalbot
+    https://unsplash.com/photos/PxiAc1aElFQ
+
+Vicenza (per la pagina «chi sono» / «dove sono»)
+  - Basilica Palladiana, la torre – Chiara Guercio
+    https://unsplash.com/photos/mH9UPZbvFy0
+  - Le statue sulla Basilica – Chiara Guercio
+    https://unsplash.com/photos/BL9xlalCViE
+  - Logge ad archi – Daniele Simon
+    https://unsplash.com/photos/fvKHsuJfA-U
