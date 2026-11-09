@@ -1,29 +1,34 @@
 # Libro della Casa: stato al 09/11/2026
 
-## Il PDF in questa cartella ha ancora i TESTI VECCHI
+## Il file da stampare
 
-Il PDF composto il 09/11 (tolto da qui perché ha i testi vecchi) aveva l'impaginazione
-giusta: copertina 230 × 305 e dorso 40 × 305 su A3, crocini, scheda di lavorazione, controlli superati.
-**I testi però sono quelli di prima delle correzioni di giovedì 05/11, verso le 17.** Per esempio a pagina 6:
-«un rogito o un APE rovinati sono una seccatura da rifare».
+`Il Libro della Casa - stampa definitiva.pdf`, 14 pagine: è la versione generica (la «matrice»).
 
-Le correzioni del 05/11 sono state fatte nella **chat dell'app Claude** e non sono mai state salvate su disco.
-Non sono nel PDF «Per la Tecnica - 13 pagine», né nel vecchio «file unico per la copisteria»: hanno gli stessi testi.
+| Pagina | Cosa | Foglio |
+|---|---|---|
+| 1 | Scheda di lavorazione, non si stampa | A4 |
+| 2 | Copertina, finita 230 × 305 mm | A3 |
+| 3 | Inserto interno, 2 copie, 195 × 135 mm | A4 |
+| 4 | Dorso, finito 40 × 305 mm | A3 |
+| 5–14 | Pagine interne: i testi rivisti il 05/11 (rev. 02) | A4 |
 
-**Prima di stampare:** copiare qui i testi corretti dalla chat dell'app, in `testi corretti.md`, e rifare il PDF.
+Le pagine interne vengono dal PDF del 05/11 delle 17:21 (chat «Raccoglitore brandizzato»), senza la sua pagina 1
+di servizio. Cambiati il 09/11 solo questi testi, con lo stesso carattere, corpo e posizione:
+
+- frontespizio: FAMIGLIA → PROPRIETARIO/A;
+- benvenuto: «10 minuti» → «Dieci minuti»; «nel pc o su cloud» → «sul computer o in un cloud»;
+- lavori: «cercare da sola» → «cercare da sé»; ultima frase → «Alla pagina successiva può annotare i contatti della rete.»;
+- rete di fiducia: «ci contatti per ricevere il contatto adeguato» → «mi chieda il contatto giusto»;
+- documenti consegnati: le righe di «Già nel raccoglitore» sono vuote, da scrivere a mano (versione generica).
+
+Lasciate come sono, per scelta del 09/11: le frasi sul mutuo e «agente e mediatore».
+
+## Da fare
+
+- L'inserto interno (pagina 3) è ancora quello di prima del 05/11: se giovedì è stato rivisto anche lui, va sostituito.
+- Più avanti: la versione personalizzata per cliente, con i campi già compilati dai documenti della sua cartella.
 
 ## Come rifare il PDF
 
-Dalla cartella `strumenti/`:
-
-    pip install pymupdf reportlab zxing-cpp numpy
-    python3 build.py "sorgente/Per la Tecnica - 13 pagine, senza scheda.pdf" "../Il Libro della Casa - stampa definitiva.pdf"
-    python3 check.py "../Il Libro della Casa - stampa definitiva.pdf" "sorgente/Per la Tecnica - 13 pagine, senza scheda.pdf"
-
-- `build.py` compone il file: scheda (pag. 1), copertina su A3 (pag. 2), inserto A4 (pag. 3), dorso su A3 (pag. 4),
-  pagine interne A4 (5–14).
-- `check.py` controlla i formati, i crocini in mm, la lettura del QR, l'assenza di fili bianchi sui tagli e che
-  inserto e pagine interne siano identici alla sorgente.
-- `sorgente/testi delle pagine interne (versione vecchia).txt` contiene i testi da confrontare con quelli corretti.
-- I testi corretti vanno sostituiti nella sorgente (pagine interne), poi si rilancia `build.py`; `check.py` darà
-  «DIVERSA» sulle pagine cambiate, ed è giusto così.
+Dalla cartella `strumenti/`: `build.py <sorgente 13 pagine> <uscita> [pagine interne 11 pagine]`, poi
+`check.py <uscita> <sorgente> [pagine interne]` (formati, crocini, QR, fili bianchi, pagine identiche).

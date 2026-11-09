@@ -143,9 +143,11 @@ for pno, (name, (tx0, ty0, tx1, ty1)), grect, liney in (
         fail(f"{name}: fondo sbordato")
 
 print("5) INSERTO E PAGINE INTERNE IDENTICHE ALL'ORIGINALE")
-for outp, srcp in [(3, 2)] + [(i, i - 1) for i in range(5, 15)]:
+INT = fitz.open(sys.argv[3]) if len(sys.argv) > 3 else None
+pairs = [(3, src, 2)] + ([(i, INT, i - 3) for i in range(5, 15)] if INT else [(i, src, i - 1) for i in range(5, 15)])
+for outp, sdoc, srcp in pairs:
     A = d[outp - 1].get_pixmap(dpi=100).samples
-    B = src[srcp - 1].get_pixmap(dpi=100).samples
+    B = sdoc[srcp - 1].get_pixmap(dpi=100).samples
     same = A == B
     print(f"  pag {outp} = originale pag {srcp}: {'identica' if same else 'DIVERSA'}", end="; ")
     if not same:

@@ -252,7 +252,12 @@ info_c = a3_piece(out, 0, (11, 11, 199, 286), 230, 305, "h", 121.0,
 out.insert_pdf(src, from_page=1, to_page=1)
 info_d = a3_piece(out, 2, (25.5, 7, 63.5, 289), 40, 305, "w", 244.294,
                   "PAGINA 4 · DORSO · foglio A3 al 100% · cartoncino opaco 200 g · taglio sui crocini: 40 × 305 mm")
-out.insert_pdf(src, from_page=3, to_page=12)
+if len(sys.argv) > 3:  # pagine interne da un altro file (pagine 2-11: la 1 è di servizio e non si stampa)
+    interne = fitz.open(sys.argv[3])
+    assert interne.page_count == 11
+    out.insert_pdf(interne, from_page=1, to_page=10)
+else:
+    out.insert_pdf(src, from_page=3, to_page=12)
 out.set_metadata({"title": "Il Libro della Casa - stampa definitiva", "author": "Rev(enue)Up"})
 out.save(OUT, garbage=3, deflate=True)
 print("copertina", info_c)
