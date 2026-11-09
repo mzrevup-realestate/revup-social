@@ -2,7 +2,7 @@
 
 ## Il PDF in questa cartella ha ancora i TESTI VECCHI
 
-`Il Libro della Casa - stampa definitiva.pdf` (e la copia `Libro-della-Casa-stampa-definitiva.pdf`) ha l'impaginazione
+Il PDF composto il 09/11 (tolto da qui perché ha i testi vecchi) aveva l'impaginazione
 giusta: copertina 230 × 305 e dorso 40 × 305 su A3, crocini, scheda di lavorazione, controlli superati.
 **I testi però sono quelli di prima delle correzioni di giovedì 05/11, verso le 17.** Per esempio a pagina 6:
 «un rogito o un APE rovinati sono una seccatura da rifare».
