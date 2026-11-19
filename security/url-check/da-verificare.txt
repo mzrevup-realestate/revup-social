@@ -1,0 +1,3 @@
+# Coda dei link da verificare: uno per riga (va bene anche la forma hxxp / [.]).
+# Ogni modifica a questo file fa partire la verifica su GitHub Actions;
+# l'esito compare nel riepilogo dell'esecuzione (scheda Actions).
