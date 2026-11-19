@@ -7,9 +7,9 @@ Uscita: giovedì 19/11/2026, alle 19:00, su Instagram, Facebook e LinkedIn.
 | Slide | Cosa dice | Etichetta | Testo alternativo |
 |---|---|---|---|
 | `01.jpg` | «Cose successe prima di» + logo di GTA VI, Massimiliano illustrato | AI SIMULAZIONE | simulazione con l'intelligenza artificiale |
-| `02.png` | Missione 1 · compiuta · Fine 2025 · «Il progetto pilota.» | nessuna | Missione 1 compiuta, fine 2025: il progetto pilota |
+| `02-v2.png` | Missione 1 · compiuta · Fine 2025 · «Il progetto pilota.» | nessuna | Missione 1 compiuta, fine 2025: il progetto pilota |
 | `03.png` | Missione 2 · compiuta · Il nome · «Le case escono dalle parentesi.» | nessuna | Missione 2 compiuta: le case escono dalle parentesi |
-| `04.png` | Missione 3 · compiuta · Settembre-novembre 2026 · «Arriviamo sui social.» | nessuna | Missione 3 compiuta, da settembre a novembre 2026: arriviamo sui social |
+| `04-v2.png` | Missione 3 · compiuta · Settembre-novembre 2026 · «Arriviamo sui social.» | nessuna | Missione 3 compiuta, da settembre a novembre 2026: arriviamo sui social |
 | `05.jpg` | Missione 4 · in corso · «E oggi?» + pre-diagnosi gratuita | AI SIMULAZIONE | simulazione con l'intelligenza artificiale |
 
 `instagram/05.jpg` chiude con «Il link è in biografia», `facebook-linkedin/05.jpg` con «Scrivici in privato».
