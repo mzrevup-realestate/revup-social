@@ -1,6 +1,6 @@
 # Carosello «Cose successe prima di GTA 6» (puntata 1 di 2)
 
-Uscita: giovedì 19/11/2026, alle 19:00, su Instagram, Facebook e LinkedIn.
+Uscita: giovedì 19/11/2026, alle 18:45, su Instagram, Facebook e LinkedIn.
 
 ## Le slide
 
