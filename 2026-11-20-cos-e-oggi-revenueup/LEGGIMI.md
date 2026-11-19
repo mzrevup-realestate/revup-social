@@ -6,7 +6,7 @@ Uscita: venerdì 20/11/2026, alle 18:00, su Instagram, Facebook e LinkedIn.
 
 | Slide | Cosa dice | Etichetta | Testo alternativo |
 |---|---|---|---|
-| `01.jpg` | Nuova missione · «Vendere meglio.» · Con Rev(enue)Up chi vende non anticipa nulla: i lavori si pagano grazie alla vendita. Massimiliano illustrato | AI SIMULAZIONE | simulazione con l'intelligenza artificiale |
+| `01-v2.jpg` | Missione 4 · «Vendere meglio.» · Con Rev(enue)Up chi vende non anticipa nulla: i lavori si pagano grazie alla vendita. Massimiliano illustrato | AI SIMULAZIONE (misura piena) | Ritratto illustrato di Massimiliano, simulazione con l'intelligenza artificiale. Missione 4: vendere meglio. Con Rev(enue)Up chi vende non anticipa nulla: i lavori si pagano grazie alla vendita. |
 | `02.png` | Missione 4 · in corso · Per chi vende · «La casa si riqualifica prima del rogito.» | nessuna | Missione 4 in corso, per chi vende: la casa si riqualifica prima del rogito. Chi vende non anticipa nulla: i lavori si pagano grazie alla vendita. |
 | `03.png` | Missione 4 · in corso · Per chi compra · «Vede già come sarà.» | nessuna | Missione 4 in corso, per chi compra: vede già come sarà. Visita la casa com'è oggi e, con le simulazioni, vede come diventerà. La trova finita al rogito. |
 | `04.png` | Missione 4 · in corso · Il nostro mestiere · «Vendere case.» | nessuna | Missione 4 in corso, il nostro mestiere: vendere case. Classe energetica, lavori e finanziabilità della casa li guardiamo prima, perché pesano sul prezzo. |
