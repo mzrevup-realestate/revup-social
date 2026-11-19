@@ -1,0 +1,6 @@
+# I nostri siti e domini: ogni lunedì vengono controllati sulle stesse 10 fonti.
+# Se uno risulta in blacklist o con malware, si apre in automatico una issue.
+# Aggiungi un dominio per riga, ad esempio:
+# https://www.nostrosito.it
+https://revenueup.homes
+https://www.revenueup.homes

@@ -1,0 +1,99 @@
+name: Verifica link sospetti
+
+# I link vengono controllati dai server di GitHub tramite 10 servizi esterni:
+# nessuno li apre dai nostri computer. Istruzioni in security/url-check/README.md
+
+on:
+  # 1. A mano: Actions → "Verifica link sospetti" → Run workflow → incolla il link
+  workflow_dispatch:
+    inputs:
+      link:
+        description: "Link (o testo con link) da verificare — anche in forma hxxp / [.]"
+        required: true
+  # 2. Aprendo una issue con titolo che inizia per [verifica]: la risposta arriva come commento
+  #    (attivo solo se il repository è privato)
+  issues:
+    types: [opened, edited]
+  # 3. Aggiungendo righe al file della coda
+  push:
+    paths:
+      - security/url-check/da-verificare.txt
+  # 4. Ogni lunedì alle 7:17 (UTC) controllo dei nostri siti
+  schedule:
+    - cron: "17 7 * * 1"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: verifica-link-${{ github.event.issue.number || github.ref }}
+  cancel-in-progress: false
+
+env:
+  GOOGLE_SAFE_BROWSING_KEY: ${{ secrets.GOOGLE_SAFE_BROWSING_KEY }}
+  VIRUSTOTAL_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
+  URLSCAN_API_KEY: ${{ secrets.URLSCAN_API_KEY }}
+  ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
+  OTX_API_KEY: ${{ secrets.OTX_API_KEY }}
+  ABUSEIPDB_API_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  METADEFENDER_API_KEY: ${{ secrets.METADEFENDER_API_KEY }}
+  SCRIPT: security/url-check/verifica_link.py
+
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Le issue fanno partire la verifica solo se aperte da chi gestisce il repository
+    # e solo se il repository è privato (in uno pubblico le issue le legge chiunque)
+    if: >-
+      github.event_name != 'issues' || (
+        github.event.repository.private &&
+        startsWith(github.event.issue.title, '[verifica]') &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+      )
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verifica
+        id: run
+        env:
+          # Il testo arriva tramite variabili d'ambiente, mai incollato nello script
+          TESTO_MANUALE: ${{ github.event.inputs.link }}
+          TESTO_ISSUE: ${{ github.event.issue.body }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          set +e
+          case "$EVENTO" in
+            workflow_dispatch) python3 "$SCRIPT" --testo-da-env TESTO_MANUALE > rapporto.md ;;
+            issues)            python3 "$SCRIPT" --testo-da-env TESTO_ISSUE   > rapporto.md ;;
+            push)              python3 "$SCRIPT" --file security/url-check/da-verificare.txt --max 25 > rapporto.md ;;
+            schedule)          python3 "$SCRIPT" --file security/url-check/siti-nostri.txt  --max 25 > rapporto.md ;;
+          esac
+          echo "codice=$?" >> "$GITHUB_OUTPUT"
+          cat rapporto.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Risposta sulla issue
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUM: ${{ github.event.issue.number }}
+        run: |
+          { echo "## Esito della verifica"; echo; cat rapporto.md;
+            echo; echo "_I link sono riportati in forma non cliccabile (hxxp, [.]). Nessuno li ha aperti dai nostri dispositivi._"; } > commento.md
+          gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body-file commento.md
+
+      - name: Allarme sui nostri siti
+        if: github.event_name == 'schedule' && steps.run.outputs.codice != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "⚠️ Uno dei nostri siti risulta segnalato ($(date +%d/%m/%Y))" \
+            --body-file rapporto.md
+
+      - name: Esito
+        if: steps.run.outputs.codice == '2'
+        run: echo "::warning::Trovato almeno un link MALEVOLO — vedi il riepilogo"
