@@ -32,7 +32,9 @@ Verdetto finale: basta **un** servizio che dice *malevolo* per avere
 **A. Dal telefono o dal browser (il più comodo)** — apri una *issue* nel
 repository con titolo che inizia per `[verifica]` e incolla nel testo il
 messaggio sospetto così com'è. Dopo 1–3 minuti arriva un commento con l'esito.
-Funziona solo per issue aperte da chi gestisce il repository.
+Funziona solo per issue aperte da chi gestisce il repository **e solo se il
+repository è privato**: in uno pubblico le issue le legge chiunque, quindi la
+verifica resta spenta.
 
 **B. Manuale** — scheda *Actions* → *Verifica link sospetti* → *Run workflow* →
 incolla il link.
@@ -64,8 +66,10 @@ vengono sempre mostrati disinnescati, così nessuno li apre per sbaglio.
 - **Mai** usare questo strumento per documenti interni o link condivisi privati
   (Drive, Dropbox, WeTransfer nostri): VirusTotal e gli altri conservano i link
   che ricevono.
-- Se il repository è pubblico, anche le issue lo sono: in quel caso usare il
-  metodo B o C, oppure rendere privato il repository.
+- In un repository pubblico anche i riepiloghi delle Actions sono pubblici: i
+  link compaiono disinnescati e senza dati personali, ma chiunque può vedere
+  *quali* link abbiamo controllato. Per i casi delicati conviene spostare questa
+  cartella in un repository privato.
 
 ## Configurazione (una volta sola, ~30 minuti)
 

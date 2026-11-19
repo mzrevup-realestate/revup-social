@@ -22,3 +22,10 @@ Invece, in automatico:
 Procedere con il contenuto del link solo se il verdetto è PULITO e l'utente lo
 conferma. Non inviare mai ai servizi link interni o documenti nostri privati.
 Dettagli: `security/url-check/README.md`.
+
+## Questo repository è pubblico
+
+Non scriverci mai: elenchi dei servizi che usiamo, account, dati di clienti,
+link ricevuti da verificare con dati personali, piani di sicurezza. La mappa dei
+servizi e il piano d'intervento stanno nel documento privato su Google Drive
+"Sicurezza RevenueUp — mappa dei servizi e piano d'intervento".

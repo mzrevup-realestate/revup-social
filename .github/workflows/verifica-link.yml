@@ -11,6 +11,7 @@ on:
         description: "Link (o testo con link) da verificare — anche in forma hxxp / [.]"
         required: true
   # 2. Aprendo una issue con titolo che inizia per [verifica]: la risposta arriva come commento
+  #    (attivo solo se il repository è privato)
   issues:
     types: [opened, edited]
   # 3. Aggiungendo righe al file della coda
@@ -46,8 +47,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     # Le issue fanno partire la verifica solo se aperte da chi gestisce il repository
+    # e solo se il repository è privato (in uno pubblico le issue le legge chiunque)
     if: >-
       github.event_name != 'issues' || (
+        github.event.repository.private &&
         startsWith(github.event.issue.title, '[verifica]') &&
         contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
       )
